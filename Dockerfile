@@ -35,6 +35,7 @@ run mv /tmp/gitblit-data/gitblit.properties /tmp/gitblit-data/default.properties
 # is streaming.  This is why the original properties file was renamed earlier.
 run sed -e "s/server\.httpsPort\s=\s8443/server\.httpsPort=443/" \
         -e "s/server\.httpPort\s=\s0/server\.httpPort=80/" \
+        -e "s/server\.contextPath\s=\s\//server\.contextPath=\/gitblit/" \
         -e "s/web\.enableRpcManagement\s=\sfalse/web\.enableRpcManagement=true/" \
         -e "s/web\.enableRpcAdministration\s=\sfalse/web.enableRpcAdministration=true/" \
         /tmp/gitblit-data/default.properties > /tmp/gitblit-data/gitblit.properties
