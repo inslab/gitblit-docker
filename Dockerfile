@@ -33,9 +33,9 @@ run mv /tmp/gitblit-data/gitblit.properties /tmp/gitblit-data/default.properties
 #
 # Note: we are writing to a different file here because sed doesn't like to the same file it
 # is streaming.  This is why the original properties file was renamed earlier.
-run sed -e "s/server\.httpsPort\s=\s8443/server\.httpsPort=443/" \
-        -e "s/server\.httpPort\s=\s0/server\.httpPort=80/" \
-        -e "s/server\.contextPath\s=\s\//server\.contextPath=\/gitblit/" \
+run sed -e "s/server\.httpsPort = 8443/server\.httpsPort=443/" \
+        -e "s/server\.httpPort = 0/server\.httpPort=80/" \
+        -e "s/server\.contextPath = \//server\.contextPath=\/gitblit/" \
         -e "s/web\.enableRpcManagement\s=\sfalse/web\.enableRpcManagement=true/" \
         -e "s/web\.enableRpcAdministration\s=\sfalse/web.enableRpcAdministration=true/" \
         /tmp/gitblit-data/default.properties > /tmp/gitblit-data/gitblit.properties
