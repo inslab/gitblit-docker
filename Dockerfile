@@ -36,8 +36,9 @@ run mv /tmp/gitblit-data/gitblit.properties /tmp/gitblit-data/default.properties
 run sed -e "s/server\.httpsPort = 8443/server\.httpsPort=443/" \
         -e "s/server\.httpPort = 0/server\.httpPort=80/" \
         -e "s/server\.contextPath = \//server\.contextPath=\/gitblit/" \
-        -e "s/web\.enableRpcManagement\s=\sfalse/web\.enableRpcManagement=true/" \
-        -e "s/web\.enableRpcAdministration\s=\sfalse/web.enableRpcAdministration=true/" \
+        -e "s/web\.enableRpcManagement = false/web\.enableRpcManagement=true/" \
+        -e "s/web\.enableRpcAdministration = false/web.enableRpcAdministration=true/" \
+        -e "s/web\.mountParameters = true/web\.mountParameters = false/" \
         /tmp/gitblit-data/default.properties > /tmp/gitblit-data/gitblit.properties
 
 # Setup the Docker container environment and run Gitblit
