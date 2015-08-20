@@ -1,7 +1,7 @@
 # Basics
 #
-from ubuntu:latest
-maintainer James Moger <james.moger@gitblit.com>
+from ubuntu:14.04
+maintainer Sunchan Lee <sunchanlee@inslab.co.kr>
 run apt-get update
 run apt-get install -q -y git-core redis-server
 
@@ -40,6 +40,9 @@ run sed -e "s/server\.httpsPort = 8443/server\.httpsPort=443/" \
         -e "s/web\.enableRpcAdministration = false/web.enableRpcAdministration=true/" \
         -e "s/web\.mountParameters = true/web\.mountParameters = false/" \
         /tmp/gitblit-data/default.properties > /tmp/gitblit-data/gitblit.properties
+
+#ENV LDAP_URI
+#ENV LDAP_BASE_DN
 
 # Setup the Docker container environment and run Gitblit
 workdir /opt/gitblit
