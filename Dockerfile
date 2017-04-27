@@ -43,7 +43,6 @@ run sed -e "s/server\.httpsPort = 8443/server\.httpsPort=443/" \
 
 #ENV LDAP_URI
 #ENV LDAP_BASE_DN
-#ENV JAVA_OPTS
 
 # Setup the Docker container environment and run Gitblit
 workdir /opt/gitblit

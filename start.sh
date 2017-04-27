@@ -19,5 +19,5 @@ if [ ! -f "/opt/gitblit-data/gitblit.properties" ]; then
 fi
 
 cd /opt/gitblit
-java -server $JAVA_OPTS -Djava.awt.headless=true -jar /opt/gitblit/gitblit.jar --baseFolder /opt/gitblit-data
+java -server -Djava.awt.headless=true -jar /opt/gitblit/gitblit.jar --baseFolder /opt/gitblit-data
 
